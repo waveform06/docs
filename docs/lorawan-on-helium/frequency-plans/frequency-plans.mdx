@@ -7,7 +7,11 @@ slug: /lorawan-on-helium/frequency-plans
 # Frequencies on the Helium Network
 
 Helium's LoRaWAN Network is built upon 8-channel gateways. This page will help you confirm the
-appropriate frequencies for gateway configuration for each country.
+appropriate frequencies your hotspot or gateway uses in each country. The actual regional frequency channel 
+plans for each country are found on regiokla/plans 
+
+Visualisations of the country coverage for each plan are available as .geojson files at the "hplans" github repository
+https://github.com/dewi-alliance/hplans
 
 Feel free to use
 [our packet forwarder configuration examples](https://github.com/helium/sx1302_hal/tree/helium/hotspot/packet_forwarder)
@@ -22,7 +26,7 @@ transmit range to downlink frequencies and special configuration may be necessar
 
 ## Frequency Plans
 
-### US915
+### US915 <a id="US915"></a>
 
 Also known as **US902-928**
 
@@ -54,7 +58,7 @@ Also known as **US902-928**
 | 7              | 927.5           | SF7BW500 to SF12BW500 (RX1) |
 | 0              | 923.3           | SF12BW500 (RX2)             |
 
-### EU868
+### EU868 <a id="EU868"></a>
 
 #### Uplink
 
@@ -75,7 +79,7 @@ Also known as **US902-928**
 - Uplink channels 1-9 (RX1)
 - Helium uses the default parameters: 869.525 MHz / DR0 (SF12, 125 kHz)
 
-### CN470
+### CN470 <a id="CN470"></a>
 
 #### Uplink
 
@@ -104,7 +108,7 @@ Also known as **US902-928**
 | 508.1           | SF7BW125 to SF12BW125 (RX1) |
 | 505.3           | SF12BW125 (RX2)             |
 
-### AU915
+### AU915 <a id="AU915"></a>
 
 #### Uplink
 
@@ -134,13 +138,46 @@ Also known as **US902-928**
 | 927.5           | SF7BW500 to SF12BW500 (RX1) |
 | 923.3           | SF12BW500 (RX2)             |
 
-## Frequency Plans by Country
 
-Where a frequency plan is "Unknown", none of the above Frequency Plans have been known to
+Split here ############################################################################################
+---
+id: region-plans
+sidebar_label: Region Channel Plans
+slug: /lorawan-on-helium/frequency-plans
+---
+
+
+## Regional Frequency Plans by Country
+
+As of 9th August 2022 the Helium Foundation moved the responsibility of regional frequency 
+selection to the LoRa Alliance. The LoRa Alliance is the governing body of the LoRaWAN standard 
+and is responsible for regulating global frequency plans as well as other LoRaWAN issues 
+(NetIDs, LoRaWAN protocol, architecture etc.) As the largest LoRaWAN deployment, the Helium 
+Network plays a significant role in helping to set LoRa Alliance standards to create a more 
+unified global network. Rather than making siloed decisions through our own committees, this 
+conversation is most effective within the LoRa Alliance framework, specifically the 
+LoRa Alliance Regional Parameters Working Group, which makes regional frequency decisions. 
+
+The Helium Foundation is a contributing member of the LoRa Alliance. For more information 
+on the LoRa Alliance including the process to become a member of a LoRa Alliance committee, 
+please visit https://lora-alliance.org/
+
+Where a frequency plan is "Unknown", none of the Regional Frequency Plans have been known to
 be assigned by the local telecommnications or radio authority in that country for use by LoRaWAN.
-People in those countries are enouraged to contact the Helium Foundation LoRaWAN Committee via
-`#foundation` in the Helium Community Discord to help call to action the LoRaWAN Alliance to define a
-frequency plan for use in your country.
+Lobbying to change from Unknown to a regional plan, or to change a regional plan should be 
+directed at the LoRa Alliance Regional Parameters Working Group mentioned above.
+
+The current version of the available frequency channel plans Helium references is RP0002-1.0.4
+https://resources.lora-alliance.org/technical-specifications/rp002-1-0-4-regional-parameters
+Where more than one frequency channel plan is available to use Helium will select the one
+recommended by the LoRa Alliance.
+
+Below is the list of the regional frequency plans that Helium uses in each country.
+
+The actual frequencies used are detailed on lorawan-on-helium/frequency-plans/frequency-plans.mdx 
+which also includes links to the github globe visualisations of the country coverage of each channel plan. 
+
+A license to operate on these frequencies may be required in your country.
 
 #### A <a id="a"></a>
 
@@ -162,7 +199,7 @@ frequency plan for use in your country.
 | Argentina               | AU915          |
 | Armenia                 | EU868          |
 | Aruba                   | Unknown        |
-| Australia               | AS923/AU915 dualplan         |
+| Australia               | AS923_1/AU915 dualplan         |
 | Austria                 | EU868          |
 | Azerbaijan              | EU433          |
 
